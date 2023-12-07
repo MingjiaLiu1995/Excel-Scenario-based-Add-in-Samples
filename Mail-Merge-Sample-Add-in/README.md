@@ -46,11 +46,15 @@ To run the completed project in this folder, you need the following:
     git clone https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples.git && cd Excel-Scenario-based-Add-in-Samples/Mail-Merge-Sample-Add-in && npm install
     ```
 1. Open the `Excel-Scenario-based-Add-in-Samples/Mail-Merge-Sample-Add-in` folder in Visual Studio Code. You can see the sample code and make code changes to the sample.
-1. To configure the sample, replace `YOUR_APP_ID_HERE` with the **Application Id** you got from the App Registration Portal.
+1. To integrate your app with the Microsoft identity platform and establishing the information that it uses to get tokens, you need to make the following changes.
+   > - If you haven't registered a web application with the Azure Active Directory admin center, please navigate to [Get an Application Id](https://github.com/OfficeDev/Excel-Scenario-based-Add-in-Samples/blob/webpage/Mail-Merge-Sample-Add-in/README.md#required-steps---get-an-application-id) to complete the settings.<br>
+   > - If you have registered in previous steps, you need to make the following changes to configure your add-in:
+   >      - In App Registration Portal: under **Redirect URI**, set the first drop-down to `Single-page application (SPA)` and set the value to `https://localhost:3000/consent.html`.
+   >      - In Visual Studio Code: edit the `taskpane.js` file and replace `YOUR_APP_ID_HERE` with the **Application Id** you got from the App Registration Portal.
 
 1. Run the following command in your CLI to start the sample add-in on desktop.
     ```console
-    npm run build && npm start
+    npm run build && npm run start
     ```
 
 ### Expected result
